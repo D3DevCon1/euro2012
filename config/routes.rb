@@ -1,10 +1,13 @@
 Predictor::Application.routes.draw do
+  
+
   match '/signup', :to => 'users#new'
   match '/signin', :to => 'pages#signin'
   match '/contact', :to => 'pages#contact'
   
   root :to => 'pages#home'
   
+  resources :gameweeks
   resources :fixtures
   resources :users
   resources :teams
