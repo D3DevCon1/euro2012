@@ -1,12 +1,12 @@
 Predictor::Application.routes.draw do
-  get "pages/home"
-
-  get "pages/contact"
-
+  match '/signup', :to => 'users#new'
+  match '/signin', :to => 'pages#signin'
+  match '/contact', :to => 'pages#contact'
+  
+  root :to => 'pages#home'
+  
   resources :fixtures
-
   resources :users
-
   resources :teams
 
   # The priority is based upon order of creation:
