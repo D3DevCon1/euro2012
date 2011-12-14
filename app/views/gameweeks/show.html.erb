@@ -1,0 +1,20 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Number:</b>
+  <%= @gameweek.number %>
+</p>
+
+<p>
+  <b>Matches:</b>
+  <%= @gameweek.matches %>
+</p>
+
+<p>
+  <b>Deadline:</b>
+  <%= @gameweek.deadline %>
+</p>
+
+
+<%= link_to 'Edit', edit_gameweek_path(@gameweek) %> |
+<%= link_to 'Back', gameweeks_path %>
