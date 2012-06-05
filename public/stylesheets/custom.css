@@ -124,16 +124,17 @@ a.signup_button {
 #error_explanation {
   width: 300px;
   border: 3px solid red;
-  padding: 7px;
+  border-color: #c00;
+  padding: 6px;
   padding-bottom: 12px;
-  margin-bottom: 20px;
+  margin-bottom: 0px;
   background-color: #fff;
 }
 
 #error_explanation h2 {
   text-align: left;
   font-weight: bold;
-  padding: 5px 5px 5px 15px;
+  padding: 5px 5px 5px 10px;
   font-size: 12px;
   margin: -7px;
   background-color: #c00;
@@ -144,14 +145,22 @@ a.signup_button {
 #error_explanation p {
   color: #333;
   margin-bottom: 0;
-  padding: 5px;
+  padding: 0px;
 }
 
 #error_explanation ul li {
   padding: 0px;
   font-size: 12px;
   list-style: square;
-  display: block;
-  margin-left: 4px;
+  display: list-item;
+  margin-left: 16px;
+  margin-bottom: 0px;
 }
+
+/* Form Styling */
+
+div.field, div.actions {
+  margin-bottom: 10px;
+}
+
 

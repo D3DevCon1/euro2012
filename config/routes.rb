@@ -1,8 +1,17 @@
 Predictor::Application.routes.draw do
   
 
+  resources :selections
+
+  resources :results
+
+  get "fixtures/new"
+
+  get "sessions/new"
+
   match '/signup', :to => 'users#new'
-  match '/signin', :to => 'pages#signin'
+  match '/signin', :to => 'sessions#new'
+  match '/signout', :to => 'sessions#destroy'
   match '/contact', :to => 'pages#contact'
   
   root :to => 'pages#home'
@@ -11,6 +20,8 @@ Predictor::Application.routes.draw do
   resources :fixtures
   resources :users
   resources :teams
+  resources :predictions
+  resources :sessions, :only => [:new, :create, :destroy]
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

@@ -12,6 +12,10 @@
   <% end %>
 
   <div class="field">
+    <%= f.label :Week_Number %><br />
+    <%= f.collection_select :weekno, Gameweek.all, :number, :number, :include_blank=>"-None-" %>
+  </div>
+  <div class="field">
     <%= f.label :date %><br />
     <%= f.datetime_select :date, :order => [:day, :month, :year] %>
   </div>
@@ -23,6 +27,10 @@
   <div class="field">
     <%= f.label :away_team %><br />
     <%= f.collection_select :away_team, Team.all, :name, :name, :include_blank=>"-Please Select Away Team-" %>
+  </div>
+  <div class="field">
+    <%= f.label :result %><br />
+    <%= f.collection_select :result, Result.all, :score, :score, :include_blank=>"-Pending-" %>
   </div>
   <div class="actions">
     <%= f.submit %>

@@ -3,13 +3,20 @@
     <nav class="round">
       <ul>
         <li><%= link_to "Home", root_path %></li>
+		<% if signed_in? %>
 		<li><%= link_to "Users", 'users' %></li>
 		<li><%= link_to "Teams", 'teams' %></li>
 		<li><%= link_to "Fixtures", 'fixtures' %></li>
         <li><%= link_to "Gameweeks", 'gameweeks' %></li>
 		<li><%= link_to "Selections", '#' %></li>
 		<li><%= link_to "Leagues", '#' %></li>
-        <li><%= link_to "Sign in", signin_path %></li>
+		<% end %>
+		<% if signed_in? %>
+		<li><%= link_to "Sign out", signout_path, :method => :delete %></li>
+		<% else %>
+		<li><%= link_to "Sign in", signin_path %></li>
+		<% end %>
       </ul>
     </nav>
 </header>
+

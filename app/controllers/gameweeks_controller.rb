@@ -41,7 +41,7 @@ class GameweeksController < ApplicationController
   # POST /gameweeks.xml
   def create
     @gameweek = Gameweek.new(params[:gameweek])
-
+	
     respond_to do |format|
       if @gameweek.save
         format.html { redirect_to(@gameweek, :notice => 'Gameweek was successfully created.') }

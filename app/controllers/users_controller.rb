@@ -1,4 +1,7 @@
 class UsersController < ApplicationController
+  before_filter :authenticate, :only => [:edit, :update]
+  before_filter :correct_user, :only => [:edit, :update]
+
   # GET /users
   # GET /users.xml
   def index
@@ -36,6 +39,7 @@ class UsersController < ApplicationController
   # GET /users/1/edit
   def edit
     @user = User.find(params[:id])
+	@title = "Edit Details"
   end
 
   # POST /users
@@ -45,7 +49,8 @@ class UsersController < ApplicationController
 
     respond_to do |format|
       if @user.save
-        format.html { redirect_to(@user, :notice => 'User was successfully created.') }
+		sign_in @user
+		format.html { redirect_to(@user, :notice => 'Congratulations your account has been created successfully. Please note your details and click Sign In link.') }
         format.xml  { render :xml => @user, :status => :created, :location => @user }
       else
         format.html { render :action => "new" }
@@ -61,7 +66,7 @@ class UsersController < ApplicationController
 
     respond_to do |format|
       if @user.update_attributes(params[:user])
-        format.html { redirect_to(@user, :notice => 'User was successfully updated.') }
+        format.html { redirect_to(@user, :notice => 'Profile details updated successfully.') }
         format.xml  { head :ok }
       else
         format.html { render :action => "edit" }
@@ -81,4 +86,16 @@ class UsersController < ApplicationController
       format.xml  { head :ok }
     end
   end
+  
+  private
+
+    def authenticate
+      deny_access unless signed_in?
+    end
+	
+	def correct_user
+      @user = User.find(params[:id])
+      redirect_to(root_path) unless current_user?(@user)
+    end
+
 end
