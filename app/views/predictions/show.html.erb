@@ -1,5 +1,28 @@
 <p id="notice"><%= notice %></p>
 
+<table width="100">
+  <tr>
+    <th>Date</th>
+	<th>Kick Off</th>
+	<th>Home</th>
+	<th></th>
+    <th>Away</th>
+	<th>Prediction</th>
+  </tr>
+
+<% Fixture.where(:weekno => [1,2,3]).each do |fixture| %> 
+  <tr>
+    <td width="10"><%= fixture.date.strftime("%d/%m/%Y")%></td>
+	<td width="10"><%= fixture.date.strftime("%H:%M") %></td>
+	<td width="40"><%= fixture.home_team %></td> 
+	<td width="10">Vs.</td>
+    <td width="40"><%= fixture.away_team %></td>
+	<% Prediction.where(:fixture_id == (fixture.id)).each do |prediction| %> 
+		<td width="10"><%= prediction.home_prediction %>-<%= prediction.away_prediction %></td>		
+	<% end %>	
+  </tr>
+<% end %>
+</table>
 
 <%= link_to 'Edit', edit_prediction_path(@prediction) %> |
 <%= link_to 'Back', predictions_path %>

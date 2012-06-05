@@ -2,7 +2,8 @@
 
 <table>
   <tr>
-    <th>Date</th>
+    <th>Week No</th>
+    <th>Date</th>	
 	<th>Kick Off</th>
     <th>Home team</th>
     <th>Away team</th>
@@ -13,6 +14,7 @@
 
 <% @fixtures.each do |fixture| %>
   <tr>
+    <td><%= fixture.weekno %></td>
     <td><%= fixture.date.strftime("%d/%m/%Y") %></td>
 	<td><%= fixture.date.strftime("%H:%M") %></td>
     <td><%= fixture.home_team %></td>
