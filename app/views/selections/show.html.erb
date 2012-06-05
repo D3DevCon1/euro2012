@@ -1,0 +1,15 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Userid:</b>
+  <%= @selection.userid %>
+</p>
+
+<p>
+  <b>Gameweek:</b>
+  <%= @selection.gameweek %>
+</p>
+
+
+<%= link_to 'Edit', edit_selection_path(@selection) %> |
+<%= link_to 'Back', selections_path %>
