@@ -1,12 +1,10 @@
 Predictor::Application.routes.draw do
   
-
+  resources :picks
   resources :selections
-
   resources :results
 
   get "fixtures/new"
-
   get "sessions/new"
 
   match '/signup', :to => 'users#new'
@@ -19,8 +17,7 @@ Predictor::Application.routes.draw do
   resources :gameweeks
   resources :fixtures
   resources :users
-  resources :teams
-  resources :predictions
+  resources :teams  
   resources :sessions, :only => [:new, :create, :destroy]
 
   # The priority is based upon order of creation:

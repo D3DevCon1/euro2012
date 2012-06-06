@@ -1,0 +1,294 @@
+<%= form_for(@pick) do |f| %>
+  <% if @pick.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@pick.errors.count, "error") %> prohibited this pick from being saved:</h2>
+
+      <ul>
+      <% @pick.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+  
+  <table width="100">
+    <tr>
+      <th>Date</th>
+	  <th>Kick Off</th>
+	  <th>Home</th>
+	  <th></th>
+      <th>Away</th>
+	  <th>Prediction</th>
+    </tr>
+
+    <% Fixture.where(:id => 1).each do |fixture| %> 
+      <tr>
+        <td width="10"><%= fixture.date.strftime("%d/%m/%Y")%></td>
+	    <td width="10"><%= fixture.date.strftime("%H:%M") %></td>
+	    <td width="80"><%= fixture.home_team %></td> 
+	    <td width="10">Vs.</td>
+        <td width="80"><%= fixture.away_team %></td>
+	    <td width="10"><%= f.collection_select :game1, Result.all, :id, :score, :include_blank=>"-Select Score-" %></td>
+      </tr>
+    <% end %>
+	
+	<% Fixture.where(:id => 2).each do |fixture| %> 
+      <tr>
+        <td width="10"><%= fixture.date.strftime("%d/%m/%Y")%></td>
+	    <td width="10"><%= fixture.date.strftime("%H:%M") %></td>
+	    <td width="80"><%= fixture.home_team %></td> 
+	    <td width="10">Vs.</td>
+        <td width="80"><%= fixture.away_team %></td>
+	    <td width="10"><%= f.collection_select :game2, Result.all, :id, :score, :include_blank=>"-Select Score-" %></td>
+      </tr>
+    <% end %>
+	
+	<% Fixture.where(:id => 3).each do |fixture| %> 
+      <tr>
+        <td width="10"><%= fixture.date.strftime("%d/%m/%Y")%></td>
+	    <td width="10"><%= fixture.date.strftime("%H:%M") %></td>
+	    <td width="80"><%= fixture.home_team %></td> 
+	    <td width="10">Vs.</td>
+        <td width="80"><%= fixture.away_team %></td>
+	    <td width="10"><%= f.collection_select :game3, Result.all, :id, :score, :include_blank=>"-Select Score-" %></td>
+      </tr>
+    <% end %>
+	
+	<% Fixture.where(:id => 4).each do |fixture| %> 
+      <tr>
+        <td width="10"><%= fixture.date.strftime("%d/%m/%Y")%></td>
+	    <td width="10"><%= fixture.date.strftime("%H:%M") %></td>
+	    <td width="80"><%= fixture.home_team %></td> 
+	    <td width="10">Vs.</td>
+        <td width="80"><%= fixture.away_team %></td>
+	    <td width="10"><%= f.collection_select :game4, Result.all, :id, :score, :include_blank=>"-Select Score-" %></td>
+      </tr>
+    <% end %>
+	
+	<% Fixture.where(:id => 5).each do |fixture| %> 
+      <tr>
+        <td width="10"><%= fixture.date.strftime("%d/%m/%Y")%></td>
+	    <td width="10"><%= fixture.date.strftime("%H:%M") %></td>
+	    <td width="80"><%= fixture.home_team %></td> 
+	    <td width="10">Vs.</td>
+        <td width="80"><%= fixture.away_team %></td>
+	    <td width="10"><%= f.collection_select :game5, Result.all, :id, :score, :include_blank=>"-Select Score-" %></td>
+      </tr>
+    <% end %>
+	
+	<% Fixture.where(:id => 6).each do |fixture| %> 
+      <tr>
+        <td width="10"><%= fixture.date.strftime("%d/%m/%Y")%></td>
+	    <td width="10"><%= fixture.date.strftime("%H:%M") %></td>
+	    <td width="80"><%= fixture.home_team %></td> 
+	    <td width="10">Vs.</td>
+        <td width="80"><%= fixture.away_team %></td>
+	    <td width="10"><%= f.collection_select :game6, Result.all, :id, :score, :include_blank=>"-Select Score-" %></td>
+      </tr>
+    <% end %>
+	
+	<% Fixture.where(:id => 7).each do |fixture| %> 
+      <tr>
+        <td width="10"><%= fixture.date.strftime("%d/%m/%Y")%></td>
+	    <td width="10"><%= fixture.date.strftime("%H:%M") %></td>
+	    <td width="80"><%= fixture.home_team %></td> 
+	    <td width="10">Vs.</td>
+        <td width="80"><%= fixture.away_team %></td>
+	    <td width="10"><%= f.collection_select :game7, Result.all, :id, :score, :include_blank=>"-Select Score-" %></td>
+      </tr>
+    <% end %>
+	
+	<% Fixture.where(:id => 8).each do |fixture| %> 
+      <tr>
+        <td width="10"><%= fixture.date.strftime("%d/%m/%Y")%></td>
+	    <td width="10"><%= fixture.date.strftime("%H:%M") %></td>
+	    <td width="80"><%= fixture.home_team %></td> 
+	    <td width="10">Vs.</td>
+        <td width="80"><%= fixture.away_team %></td>
+	    <td width="10"><%= f.collection_select :game8, Result.all, :id, :score, :include_blank=>"-Select Score-" %></td>
+      </tr>
+    <% end %>
+	
+	<% Fixture.where(:id => 9).each do |fixture| %> 
+      <tr>
+        <td width="10"><%= fixture.date.strftime("%d/%m/%Y")%></td>
+	    <td width="10"><%= fixture.date.strftime("%H:%M") %></td>
+	    <td width="80"><%= fixture.home_team %></td> 
+	    <td width="10">Vs.</td>
+        <td width="80"><%= fixture.away_team %></td>
+	    <td width="10"><%= f.collection_select :game9, Result.all, :id, :score, :include_blank=>"-Select Score-" %></td>
+      </tr>
+    <% end %>
+	
+	<% Fixture.where(:id => 10).each do |fixture| %> 
+      <tr>
+        <td width="10"><%= fixture.date.strftime("%d/%m/%Y")%></td>
+	    <td width="10"><%= fixture.date.strftime("%H:%M") %></td>
+	    <td width="80"><%= fixture.home_team %></td> 
+	    <td width="10">Vs.</td>
+        <td width="80"><%= fixture.away_team %></td>
+	    <td width="10"><%= f.collection_select :game10, Result.all, :id, :score, :include_blank=>"-Select Score-" %></td>
+      </tr>
+    <% end %>
+	
+	<% Fixture.where(:id => 11).each do |fixture| %> 
+      <tr>
+        <td width="10"><%= fixture.date.strftime("%d/%m/%Y")%></td>
+	    <td width="10"><%= fixture.date.strftime("%H:%M") %></td>
+	    <td width="80"><%= fixture.home_team %></td> 
+	    <td width="10">Vs.</td>
+        <td width="80"><%= fixture.away_team %></td>
+	    <td width="10"><%= f.collection_select :game11, Result.all, :id, :score, :include_blank=>"-Select Score-" %></td>
+      </tr>
+    <% end %>
+	
+	<% Fixture.where(:id => 12).each do |fixture| %> 
+      <tr>
+        <td width="10"><%= fixture.date.strftime("%d/%m/%Y")%></td>
+	    <td width="10"><%= fixture.date.strftime("%H:%M") %></td>
+	    <td width="80"><%= fixture.home_team %></td> 
+	    <td width="10">Vs.</td>
+        <td width="80"><%= fixture.away_team %></td>
+	    <td width="10"><%= f.collection_select :game12, Result.all, :id, :score, :include_blank=>"-Select Score-" %></td>
+      </tr>
+    <% end %>
+	
+	<% Fixture.where(:id => 13).each do |fixture| %> 
+      <tr>
+        <td width="10"><%= fixture.date.strftime("%d/%m/%Y")%></td>
+	    <td width="10"><%= fixture.date.strftime("%H:%M") %></td>
+	    <td width="80"><%= fixture.home_team %></td> 
+	    <td width="10">Vs.</td>
+        <td width="80"><%= fixture.away_team %></td>
+	    <td width="10"><%= f.collection_select :game13, Result.all, :id, :score, :include_blank=>"-Select Score-" %></td>
+      </tr>
+    <% end %>
+	
+	<% Fixture.where(:id => 14).each do |fixture| %> 
+      <tr>
+        <td width="10"><%= fixture.date.strftime("%d/%m/%Y")%></td>
+	    <td width="10"><%= fixture.date.strftime("%H:%M") %></td>
+	    <td width="80"><%= fixture.home_team %></td> 
+	    <td width="10">Vs.</td>
+        <td width="80"><%= fixture.away_team %></td>
+	    <td width="10"><%= f.collection_select :game14, Result.all, :id, :score, :include_blank=>"-Select Score-" %></td>
+      </tr>
+    <% end %>
+	
+	<% Fixture.where(:id => 15).each do |fixture| %> 
+      <tr>
+        <td width="10"><%= fixture.date.strftime("%d/%m/%Y")%></td>
+	    <td width="10"><%= fixture.date.strftime("%H:%M") %></td>
+	    <td width="80"><%= fixture.home_team %></td> 
+	    <td width="10">Vs.</td>
+        <td width="80"><%= fixture.away_team %></td>
+	    <td width="10"><%= f.collection_select :game15, Result.all, :id, :score, :include_blank=>"-Select Score-" %></td>
+      </tr>
+    <% end %>
+	
+	<% Fixture.where(:id => 16).each do |fixture| %> 
+      <tr>
+        <td width="10"><%= fixture.date.strftime("%d/%m/%Y")%></td>
+	    <td width="10"><%= fixture.date.strftime("%H:%M") %></td>
+	    <td width="80"><%= fixture.home_team %></td> 
+	    <td width="10">Vs.</td>
+        <td width="80"><%= fixture.away_team %></td>
+	    <td width="10"><%= f.collection_select :game16, Result.all, :id, :score, :include_blank=>"-Select Score-" %></td>
+      </tr>
+    <% end %>
+	
+	<% Fixture.where(:id => 17).each do |fixture| %> 
+      <tr>
+        <td width="10"><%= fixture.date.strftime("%d/%m/%Y")%></td>
+	    <td width="10"><%= fixture.date.strftime("%H:%M") %></td>
+	    <td width="80"><%= fixture.home_team %></td> 
+	    <td width="10">Vs.</td>
+        <td width="80"><%= fixture.away_team %></td>
+	    <td width="10"><%= f.collection_select :game17, Result.all, :id, :score, :include_blank=>"-Select Score-" %></td>
+      </tr>
+    <% end %>
+	
+	<% Fixture.where(:id => 18).each do |fixture| %> 
+      <tr>
+        <td width="10"><%= fixture.date.strftime("%d/%m/%Y")%></td>
+	    <td width="10"><%= fixture.date.strftime("%H:%M") %></td>
+	    <td width="80"><%= fixture.home_team %></td> 
+	    <td width="10">Vs.</td>
+        <td width="80"><%= fixture.away_team %></td>
+	    <td width="10"><%= f.collection_select :game18, Result.all, :id, :score, :include_blank=>"-Select Score-" %></td>
+      </tr>
+    <% end %>
+	
+	<% Fixture.where(:id => 19).each do |fixture| %> 
+      <tr>
+        <td width="10"><%= fixture.date.strftime("%d/%m/%Y")%></td>
+	    <td width="10"><%= fixture.date.strftime("%H:%M") %></td>
+	    <td width="80"><%= fixture.home_team %></td> 
+	    <td width="10">Vs.</td>
+        <td width="80"><%= fixture.away_team %></td>
+	    <td width="10"><%= f.collection_select :game19, Result.all, :id, :score, :include_blank=>"-Select Score-" %></td>
+      </tr>
+    <% end %>
+	
+	<% Fixture.where(:id => 20).each do |fixture| %> 
+      <tr>
+        <td width="10"><%= fixture.date.strftime("%d/%m/%Y")%></td>
+	    <td width="10"><%= fixture.date.strftime("%H:%M") %></td>
+	    <td width="80"><%= fixture.home_team %></td> 
+	    <td width="10">Vs.</td>
+        <td width="80"><%= fixture.away_team %></td>
+	    <td width="10"><%= f.collection_select :game20, Result.all, :id, :score, :include_blank=>"-Select Score-" %></td>
+      </tr>
+    <% end %>
+	
+	<% Fixture.where(:id => 21).each do |fixture| %> 
+      <tr>
+        <td width="10"><%= fixture.date.strftime("%d/%m/%Y")%></td>
+	    <td width="10"><%= fixture.date.strftime("%H:%M") %></td>
+	    <td width="80"><%= fixture.home_team %></td> 
+	    <td width="10">Vs.</td>
+        <td width="80"><%= fixture.away_team %></td>
+	    <td width="10"><%= f.collection_select :game21, Result.all, :id, :score, :include_blank=>"-Select Score-" %></td>
+      </tr>
+    <% end %>
+	
+	<% Fixture.where(:id => 22).each do |fixture| %> 
+      <tr>
+        <td width="10"><%= fixture.date.strftime("%d/%m/%Y")%></td>
+	    <td width="10"><%= fixture.date.strftime("%H:%M") %></td>
+	    <td width="80"><%= fixture.home_team %></td> 
+	    <td width="10">Vs.</td>
+        <td width="80"><%= fixture.away_team %></td>
+	    <td width="10"><%= f.collection_select :game22, Result.all, :id, :score, :include_blank=>"-Select Score-" %></td>
+      </tr>
+    <% end %>
+	
+	<% Fixture.where(:id => 23).each do |fixture| %> 
+      <tr>
+        <td width="10"><%= fixture.date.strftime("%d/%m/%Y")%></td>
+	    <td width="10"><%= fixture.date.strftime("%H:%M") %></td>
+	    <td width="80"><%= fixture.home_team %></td> 
+	    <td width="10">Vs.</td>
+        <td width="80"><%= fixture.away_team %></td>
+	    <td width="10"><%= f.collection_select :game23, Result.all, :id, :score, :include_blank=>"-Select Score-" %></td>
+      </tr>
+    <% end %>
+	
+	<% Fixture.where(:id => 24).each do |fixture| %> 
+      <tr>
+        <td width="10"><%= fixture.date.strftime("%d/%m/%Y")%></td>
+	    <td width="10"><%= fixture.date.strftime("%H:%M") %></td>
+	    <td width="80"><%= fixture.home_team %></td> 
+	    <td width="10">Vs.</td>
+        <td width="80"><%= fixture.away_team %></td>
+	    <td width="10"><%= f.collection_select :game24, Result.all, :id, :score, :include_blank=>"-Select Score-" %></td>
+      </tr>
+    <% end %>
+	
+  </table>
+
+  
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

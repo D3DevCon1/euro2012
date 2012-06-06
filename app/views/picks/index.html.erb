@@ -1,0 +1,71 @@
+<h1>Listing picks</h1>
+
+<table>
+  <tr>
+    <th>User</th>
+    <th>Game1</th>
+    <th>Game2</th>
+    <th>Game3</th>
+    <th>Game4</th>
+    <th>Game5</th>
+    <th>Game6</th>
+    <th>Game7</th>
+    <th>Game8</th>
+    <th>Game9</th>
+    <th>Game10</th>
+    <th>Game11</th>
+    <th>Game12</th>
+    <th>Game13</th>
+    <th>Game14</th>
+    <th>Game15</th>
+    <th>Game16</th>
+    <th>Game17</th>
+    <th>Game18</th>
+    <th>Game19</th>
+    <th>Game20</th>
+    <th>Game21</th>
+    <th>Game22</th>
+    <th>Game23</th>
+    <th>Game24</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @picks.each do |pick| %>
+  <tr>
+    <td><%= pick.user_id %></td>
+    <td><%= pick.game1 %></td>
+    <td><%= pick.game2 %></td>
+    <td><%= pick.game3 %></td>
+    <td><%= pick.game4 %></td>
+    <td><%= pick.game5 %></td>
+    <td><%= pick.game6 %></td>
+    <td><%= pick.game7 %></td>
+    <td><%= pick.game8 %></td>
+    <td><%= pick.game9 %></td>
+    <td><%= pick.game10 %></td>
+    <td><%= pick.game11 %></td>
+    <td><%= pick.game12 %></td>
+    <td><%= pick.game13 %></td>
+    <td><%= pick.game14 %></td>
+    <td><%= pick.game15 %></td>
+    <td><%= pick.game16 %></td>
+    <td><%= pick.game17 %></td>
+    <td><%= pick.game18 %></td>
+    <td><%= pick.game19 %></td>
+    <td><%= pick.game20 %></td>
+    <td><%= pick.game21 %></td>
+    <td><%= pick.game22 %></td>
+    <td><%= pick.game23 %></td>
+    <td><%= pick.game24 %></td>
+    <td><%= link_to 'Show', pick %></td>
+    <td><%= link_to 'Edit', edit_pick_path(pick) %></td>
+    <td><%= link_to 'Destroy', pick, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Pick', new_pick_path %>
